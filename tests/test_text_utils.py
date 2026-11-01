@@ -11,6 +11,8 @@ import text_utils
 def test_clean_name_whitespace():
     """Extra inner and outer whitespace should be removed."""
     assert text_utils.clean_name("   sara    ali   ") == "Sara Ali"
+    assert text_utils.clean_name("  sara ali  ") == "Sara Ali"
+    assert text_utils.clean_name("sara   ali") == "Sara Ali"
 
 
 def test_clean_name_capitalisation():
